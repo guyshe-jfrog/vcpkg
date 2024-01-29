@@ -1,28 +1,14 @@
 if(VCPKG_TARGET_IS_WINDOWS)
     set(PATCHES
-        "0001-Use-libtre.patch"
-        "0002-Change-zlib-lib-name-to-match-CMake-output.patch"
-        "0003-Fix-WIN32-macro-checks.patch"
-        "0004-Typedef-POSIX-types-on-Windows.patch"
-        "0005-Include-dirent.h-for-S_ISREG-and-S_ISDIR.patch"
-        "0006-Remove-Wrap-POSIX-headers.patch"
-        "0007-Substitute-unistd-macros-for-MSVC.patch"
-        "0008-Add-FILENO-defines.patch"
-        "0010-Properly-check-for-the-presence-of-bitmasks.patch"
-        "0011-Remove-pipe-related-functions-in-funcs.c.patch"
-        "0012-Convert-MSYS2-paths-to-Windows-paths.patch"
-        "0013-Check-for-backslash-in-argv-0-on-Windows.patch"
-        "0015-MSYS2-Remove-ioctl-call.patch"
-        "0016-Fix-file_famagic-function.patch"
     )
 endif()
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO file/file
-    REF FILE5_45
-    SHA512 fdd4c5d13d5ea1d25686c76d8ebc3252c54040c4871e3f0f623c4548b3841795d4e36050292a9453eedf0fbf932573890e9d6ac9fa63ccf577215598ae84b9ea
-    HEAD_REF master
+    REPO guyshe-jfrog/file
+    REF 19dfa44f1743120259a2043f6f159a65ea6db833
+    SHA512 b587b0233528e08bc04610901a6b2aa486cf35769dfdadd0c5f99a5b3c0da128f748cd7a7ad02a9382e246116371485708f33f228b104b9e8a5fd75af77dc5dc
+    HEAD_REF jfrog5
     PATCHES ${PATCHES}
 )
 
